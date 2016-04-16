@@ -9,21 +9,15 @@ import java.util.*;
 
 public class DataInput
 {
-
+//Need to add Validation for ReadMorse so string only contains valid characters
     public static String readMorse()
     {
         {
             Scanner sc = new Scanner(System.in);
             boolean specialCharacters = true;
             String inputtedString = "";
-           do{    
             System.out.println("Please enter the text you would like to convert to Morse Code:");
             inputtedString = sc.nextLine();
-            specialCharacters = CheckStringContainsSpecialCharacters.containsSpecialCharacters(inputtedString);
-            if (specialCharacters == true){
-                System.out.println("Sorry you can't convert special characters.");
-            }
-           }while(specialCharacters == true);
             return inputtedString;
         }   
     }
