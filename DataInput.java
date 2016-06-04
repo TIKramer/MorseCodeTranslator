@@ -15,7 +15,6 @@ public class DataInput
     {
         {
             Scanner sc = new Scanner(System.in);
-            boolean specialCharacters = true;
             String inputtedString = "";
             System.out.println("Please enter the text you would like to convert to Morse Code:");
             inputtedString = sc.nextLine();
@@ -38,3 +37,4 @@ public class DataInput
        }while(specialCharacters == true);
         return inputtedString;
     }    
+}

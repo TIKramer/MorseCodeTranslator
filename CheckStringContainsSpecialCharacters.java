@@ -5,28 +5,31 @@
 ***************************************************************/
 public class CheckStringContainsSpecialCharacters
 {
-    public static boolean containsSpecialCharacters(String stringToBeChecked){
-   
-    char[] specialCharacters = {'[','-', '/', '@', '#', '!', '*', '$', '%', '^', '&', '.', '\'', '_', '+', '=', '{', '}', ':',
-                                                                                             '(', ')', '+',']','+'};
-    boolean stringContainsSpecialCharacters = false;
-   
-    
+    public static boolean containsSpecialCharacters(String stringToBeChecked)
+    {
+
+        char[] specialCharacters =
+        { '[', '-', '/', '@', '#', '!', '*', '$', '%', '^', '&', '.', '\'', '_', '+', '=', '{', '}', ':', '(', ')',
+                '+', ']', '+' };
+        boolean stringContainsSpecialCharacters = false;
+
         char[] charArray = stringToBeChecked.toCharArray();
-    
-        for(char characterInString: charArray){
-            for(int i = 0; i <= 23; i++){
-    if (characterInString == specialCharacters[i]) {
-         
-          stringContainsSpecialCharacters = true;
-          i = 24;
-    } else {
-         
-         stringContainsSpecialCharacters = false;
+
+        for (int i = 0; i < charArray.length; i++)
+        {
+            int j = 0;
+            boolean foundMatch = false;
+            while (j < specialCharacters.length && !foundMatch)
+            {
+                if (charArray[i] == specialCharacters[j])
+                {
+                    stringContainsSpecialCharacters = true;
+                    foundMatch = true;
+                }
+                j++;
+            }
+
+        }
+        return stringContainsSpecialCharacters;
     }
-    }
-    
-    }
-    return stringContainsSpecialCharacters;
-}
 }
